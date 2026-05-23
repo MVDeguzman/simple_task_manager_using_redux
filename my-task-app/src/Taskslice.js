@@ -1,10 +1,4 @@
-// taskSlice.js
-// A "slice" manages one piece of state — in this case, the task list.
-// It holds the data AND the functions that change that data.
-
 import { createSlice } from "@reduxjs/toolkit";
-
-// Starting state: an empty task list
 const initialState = {
   taskList: [],
 };

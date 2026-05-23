@@ -1,17 +1,13 @@
-// App.js
-// This is the main screen of the app.
-// It lets users type a task, add it, and see all tasks on screen.
-
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTask } from "./taskSlice";
+import { addTask } from "./Taskslice";
 import "./App.css";
 
 function App() {
-  // useState is ONLY used for the input field text
+  //used for the input field text
   const [inputText, setInputText] = useState("");
 
-  // useDispatch lets us send actions to the Redux store
+  // para mag send actions to the Redux store
   const dispatch = useDispatch();
 
   // useSelector reads the task list from the Redux store
@@ -42,10 +38,10 @@ function App() {
   return (
     <div className="app-container">
       <div className="task-card">
-        <h1 className="app-title">📝 Task Manager</h1>
+        <h1 className="app-title">TASK MANAGER</h1>
         <p className="app-subtitle">Stay on top of your day</p>
 
-        {/* Input row */}
+       
         <div className="input-row">
           <input
             type="text"
@@ -60,14 +56,14 @@ function App() {
           </button>
         </div>
 
-        {/* Task count */}
+        
         <p className="task-count">
           {taskList.length === 0
             ? "No tasks yet. Add one above!"
             : `You have ${taskList.length} task${taskList.length > 1 ? "s" : ""}`}
         </p>
 
-        {/* Task list */}
+       
         <ul className="task-list">
           {taskList.map((task, index) => (
             <li key={index} className="task-item">
